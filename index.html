@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Demo Project1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  input {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  }
+  button {
+    color: rgb(39, 24, 24);
+    margin-top: 15px;
+    margin-left: 10px;
+    padding-right: 10px;
+  }
+  h3 {
+    color:rgb(29, 4, 53);
+    text-align: center;
+  }
+  canvas {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  }
+  video {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  }
+  p {font-size: 16px;}
+  .camera {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  }
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+  }
+  .bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+  
+  
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"> <img src="https://bootstrapious.com/i/snippets/sn-nav-logo/logo.png" width="30" alt="" class="d-inline-block align-middle mr-2">
+        <p class="text-uppercase font-weight-bold">Project1</p> 
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+     <h3>Image Classifications</h3>
+    </div>
+  </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+ 
+  <img src="select.gif" id="image" class="img-responsive margin" style="display:inline" alt="Select image you want to predict" width="500" height="500">
+  <h3 id="label"></h3>
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <p>This website help you predict label of image. Website can predict image belong to ......</p><br>
+  <p>Please select image you want to predict</p>
+   <!-- <span class="glyphicon glyphicon-search"></span> Search-->
+   <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" > <br>
+   <button id="send" onclick="run()">Predict</button>
+ 
+</div>
+<div> 
+  <video id="video" width="320" height="240" autoplay></video> <br><br>
+  <div class="container-fluid bg-2 text-center">
+    <p>Click on the Start Camera button to start the Camera and click on the Stop Camera button to stop camera.</p>
+    <button id="start-camera">Start Camera</button>
+    
+    <button id="click-photo">Click Photo</button>
+    <button id="stop-camera">Stop Camera</button><br/>
+    <button id="predict">Predict</button>
+  </div>
+
+<canvas id="canvas" width="320" height="240"></canvas>
+<h3 id="labelcamera"></h3>
+   </div>
+
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>This website is my first project at HUST. This is only for demo purposes</p> 
+</footer>
+<script src="controll.js">
+
+</script>
+</body>
+</html>
