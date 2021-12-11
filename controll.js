@@ -78,7 +78,21 @@ let canvas = document.querySelector("#canvas");
 let image_data_url;
 let stream;
 camera_button.addEventListener('click', async function() {
-   	 stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+   	 stream = await navigator.mediaDevices.getUserMedia({ video:{
+      facingMode: {
+         ideal: 'environment'
+      },
+      width: {
+         min: 360,
+         ideal: 1280,
+         max: 1920
+      },
+      height: {
+         min: 240,
+         ideal: 720,
+         max: 1080
+      }
+   }, audio: false });
 	video.srcObject = stream;
 });
 
